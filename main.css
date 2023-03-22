@@ -146,4 +146,11 @@ body {
 }
 .hero-text{
     font-size: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #eee;
+    margin: -3rem 1rem;
+    padding: 2rem;
+    border-radius: 1rem 0 1rem 0;
 }
