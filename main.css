@@ -10,6 +10,7 @@ html {
 body {
     margin: 0px;
     font-family: 'segoe ui';
+
 }
 
 .nav {
@@ -18,9 +19,16 @@ body {
     width: 100%;
     /* background-color: #010101; */
     /* background-color: #f5f5f59a; */
-    background-color: #fff;
+    /* background-color: #fff; */
     color: #010101;
     position: relative;
+
+    /* background-image:
+        radial-gradient(rgb(234, 225, 225) 10%, transparent 10%);
+    background-position: 8px 8px;
+    background-size: 16px 16px; */
+    background-color: #333333;
+    z-index: 10000;
 }
 
 .nav>.nav-header {
@@ -31,6 +39,7 @@ body {
     display: inline-block;
     font-size: 22px;
     /* color: #fff; */
+    color: #fff;
     padding: 10px 10px 10px 10px;
 }
 
@@ -42,19 +51,22 @@ body {
     display: inline;
     float: right;
     font-size: 18px;
+    margin-top: 2rem;
+    
 }
 
 .nav>.nav-links>a {
     display: inline-block;
     padding: 13px 24px 13px 24px;
     text-decoration: none;
-    /* color: #efefef; */
-    color: #010101;
+    color: #efefef;
+    /* color: #010101; */
     font-family: 'Montserrat', sans-serif;
+    text-align: center;
 }
 
 .nav>.nav-links>a:hover {
-    background-color: #1b1a1a40;
+    background-color: #ffe449;
     color: #010101;
     font-weight: bold;
 }
@@ -89,14 +101,14 @@ body {
         display: block;
         width: 25px;
         height: 10px;
-        border-top: 4px solid #010101;
+        border-top: 4px solid #fff;
     }
 
     .nav>.nav-links {
         position: absolute;
         display: block;
         width: 100%;
-        background-color: #fff;
+        background-color: #333333;
         height: 0px;
         transition: all 0.3s ease-in;
         overflow-y: hidden;
@@ -119,17 +131,17 @@ body {
     }
 }
 
-:root {
+/* :root {
     --polka-bg-image:
         radial-gradient(rgb(236, 229, 223) 10%, transparent 20%),
         radial-gradient(rgb(236, 229, 223) 10%, transparent 20%);
     --polka-bg-position: 0px 0px, 8px 8px;
     --polka-bg-size: 16px 16px;
     --polka-bg-color: rgb(255, 255, 255);
-}
+} */
 
 /* ...or add this class to an element */
-.hero {
+/* .hero {
     height: 500px;
     background-image:
         radial-gradient(rgb(236, 229, 223) 10%, transparent 20%),
@@ -139,17 +151,105 @@ body {
     background-color: #fff;
 
 
+} */
+
+:root {
+    --polka-bg-image:
+        radial-gradient(rgb(234, 225, 225) 10%, transparent 10%);
+    --polka-bg-position: 8px 8px;
+    --polka-bg-size: 16px 16px;
+    --polka-bg-color: rgb(255, 255, 255);
+    --color: #ffe449;
 }
 
+/* ...or add this class to an element */
+.hero {
+    height: 500px;
+    /* background-image:
+        radial-gradient(rgb(234, 225, 225) 10%, transparent 10%);
+    background-position: 8px 8px;
+    background-size: 16px 16px; */
+    /* background-color: rgb(255, 255, 255); */
+    position: relative;
+    background: #333333;
+    color: white;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+}
+
+/* ========================= */
+
+.waves {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 200px;
+    background-color: var(--color);
+    box-shadow: inset 0 0 50px rgba(0, 0, 0, 0.5);
+    transition: 500ms;
+}
+
+.waves::before,
+.waves::after {
+    content: '';
+    position: absolute;
+    width: 300vw;
+    height: 300vw;
+    top: -65vw;
+    left: 50%;
+    transform: translate(-50%, -75%);
+}
+
+.waves::before {
+    border-radius: 50%;
+    background: rgba(51, 51, 51, 1);
+    animation: waves 8s linear infinite;
+}
+
+.waves::after {
+    border-radius: 44%;
+    background: rgba(51, 51, 51, 0.5);
+    animation: waves 15s linear infinite;
+}
+.waves p{
+    color: #010101;
+    font-family: 'Oswald',sans-serif;
+    font-size: 1.2rem;
+    margin-top: 4rem;
+    padding: 0 16px;
+    text-align: center;
+}
+
+/* @keyframes waves {
+    0% {
+        transform: translate(-50%, -75%) rotate(0deg);
+    }
+
+    100% {
+        transform: translate(-50%, -75%) rotate(360deg);
+    }
+} */
+
+
 .hero-img {
-    height: 100%;
-    width: 80%;
+    height: 70%;
+    /* width: 80%; */
     margin: 0 auto;
     background-image: url('./hero.png');
     background-repeat: no-repeat;
     background-size: contain;
     background-position: center;
     z-index: 10;
+}
+
+.hero .content img {
+    max-width: 100%;
+    position: relative;
+    z-index: 1000;
+    margin-top: -8.5rem;
 }
 
 .hero-text {
@@ -164,9 +264,9 @@ body {
 }
 
 .chira {
-    margin: 2rem 1rem;
+    /* margin: 2rem 0; */
     padding: 1.5rem;
-    border-radius: 0 0 1.5rem 1.5rem;
+    /* border-radius: 0 0 1.5rem 1.5rem; */
     background-color: rgba(79, 71, 78, 1.0000000000);
     border-bottom-color: rgba(255, 213, 79, 1.0000000000);
     border-bottom-style: solid;
@@ -174,20 +274,29 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: -4rem;
+    margin-top: 5rem;
+}
+
+.headline {
+    margin-top: -11rem;
+    font-size: 1.2rem;
+    text-align: center;
+    padding: 20px 16px;
+
+    font-weight: bold;
+    font-family: 'Roboto', sans-serif;
 }
 
 .tagline {
-    
-    font-size: 2rem;
+    font-size: 1.5rem;
     color: #fff;
     z-index: 100;
     font-family: 'Pacifico', cursive;
 }
 
 .red-divider {
-    margin: 1rem 4rem;
-    height: 5px;
+    margin: 1rem 2rem;
+    height: 3px;
     background-color: rgba(211, 65, 63, 1.0000000000);
 }
 
@@ -202,7 +311,7 @@ body {
 
 .sands-title {
     font-family: 'Oswald', sans-serif;
-    font-size: 2.5rem;
+    font-size: 1.8rem;
     border: 2px solid white;
     padding: 0.25rem 1rem;
     color: #fff;
@@ -252,7 +361,7 @@ body {
 }
 
 .sand-card .s-title {
-    font-size: 2rem;
+    font-size: 1.5rem;
     font-weight: bold;
     margin: 1rem 1rem;
     font-weight: 400;
@@ -261,20 +370,21 @@ body {
 }
 
 .sand-card .s-subtitle {
-    font-size: 1.5rem;
-    margin: 1rem 1rem;
+    font-size: 1.2rem;
+    margin: 0.5rem 1rem;
     font-family: 'Roboto', ;
     text-transform: capitalize;
     font-style: italic;
 }
 
 .sand-card .s-info {
-    font-size: 1.2rem;
+    padding: 0 1.5rem;
+    font-size: 1rem;
     color: #010101;
     margin: 0 1rem;
-    width: 60%;
-    font-family: 'Roboto', sans-serif;
-    font-weight: 300;
+    /* width: 60%; */
+    font-family: inherit;
+
 
 }
 
@@ -301,10 +411,12 @@ body {
 }
 
 .laterite-stone-img {
-    max-width: 100%;
+    /* max-width: 80%; */
     height: 300px;
     margin-top: 2rem;
     border-radius: 0.5rem;
+    margin-left: 1rem;
+    margin-right: 1rem;
 }
 
 .stone-info {
@@ -335,14 +447,43 @@ body {
     margin-top: 2rem;
     font-family: 'Roboto', sans-serif;
     background-color: #eee;
-    padding: 3rem;
+    padding: 1rem;
 }
 
 .contact-book .div-book {
     border: 2px solid;
     padding: 1rem;
+
     /* outline: 5px solid rgb(255, 123, 0);
     outline-offset: -7px; */
+}
+
+.contact-book .div-book a {
+    text-decoration: none;
+}
+
+.contact-book .div-book h3 p {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 8px;
+    margin-bottom: 8px;
+}
+
+.contact-book .div-book h3 .bx {
+    font-size: 1.75rem;
+}
+
+.bx-phone-call {
+    color: #0000EE;
+}
+
+.bxl-whatsapp {
+    color: rgb(56, 158, 56);
+}
+
+.whatsapp-a {
+    color: rgb(56, 158, 56);
 }
 
 .construction-div .const-title {
@@ -405,7 +546,7 @@ body {
 .jcb-title {
     padding: 2rem 0;
     background-color: #eee;
-    font-size: 2rem;
+    font-size: 1.5rem;
     text-transform: uppercase;
     font-family: 'Oswald', sans-serif;
     display: flex;
@@ -425,7 +566,7 @@ body {
 }
 
 .jcb-title-img h1 {
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     font-weight: 500;
     color: #433d3d;
     font-family: 'Oswald';
@@ -436,25 +577,29 @@ body {
     padding: 1rem 2rem;
     /* width: 100px; */
     text-align: justify;
-    width: 70%;
+    /* width: 90%; */
     margin: 0 auto;
 }
-.jcb-info ul{
+
+.jcb-info ul {
     list-style-type: none;
     display: flex;
     flex-direction: column;
-    padding: 1rem 8rem;
+    padding: 1rem 2rem;
 }
-.jcb-info ul > h2{
+
+.jcb-info ul>h2 {
     font-size: 1.5rem;
     margin-bottom: 1rem;
 }
-.jcb-info ul > li{
+
+.jcb-info ul>li {
     margin: 0 1.2rem;
     font-weight: 500;
     font-size: 1.2rem;
 }
-.jcb-info ul > li:before {
+
+.jcb-info ul>li:before {
     content: "";
     height: 1.5rem;
     width: 1.5rem;
@@ -464,14 +609,15 @@ body {
     background-position: center;
     background-repeat: no-repeat;
     background-size: 100%;
-  }
-  
-  .jcb-info ul > li:before { 
+}
+
+.jcb-info ul>li:before {
     background: url("https://info.openpath.com/hubfs/checkmark-round-orange.svg");
     background-size: cover;
     background-position: center;
     padding: .15rem;
-  }
+}
+
 /* .jcb-info ul > li::before {
     background: url("https://info.openpath.com/hubfs/checkmark-round-orange.svg");
     background-size: cover;
@@ -479,12 +625,62 @@ body {
     padding: .15rem;
 } */
 
-.jcb-info .info-price{
+.jcb-info .info-price {
     font-style: italic;
     font-weight: bold;
+    font-size: 1rem;
+}
+
+.contacts img {
+    max-width: 100%;
+
+}
+
+.contacts .info .name {
+    font-family: 'Oswald', sans-serif;
+    font-size: 2rem;
+    padding: 4px 16px;
+}
+
+.contacts .info .position {
+    padding: 0 16px;
+    font-size: 1.2rem;
+    font-weight: 500;
+    font-family: 'Roboto', sans-serif;
+}
+
+.contacts .info .contact-details {
+    font-size: 1rem;
+    padding: 0 16px;
+    color: #0000EE;
+    margin-bottom: 1rem !important;
+}
+
+.contacts .info .item {
+    font-size: 1rem;
+    padding: 2px 16px !important;
+    color: #0000EE;
+}
+
+.nominee img {
+    margin-top: 1rem;
 }
 
 
+/* .director-img{
+    height: 450px;
+    background-image: url(./director.jpg);
+    
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.nominee-img{
+    height: 450px;
+    background-image: url(./nominee.jpg);
+    
+    background-repeat: no-repeat;
+    background-size: cover;
+} */
 
 @media only screen and (min-width: 768px) {
     .sands {
