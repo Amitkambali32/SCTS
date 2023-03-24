@@ -148,7 +148,10 @@ body {
         overflow-y: auto;
     }
 }
-
+.logo{
+    width: 40px;
+    color: #ffe449;
+}
 /* :root {
     --polka-bg-image:
         radial-gradient(rgb(236, 229, 223) 10%, transparent 20%),
@@ -715,6 +718,7 @@ body {
     font-size: 1.5rem;
     color: aliceblue;
     font-family: 'Oswald',sans-serif;
+    
 }
 .director,.nominee{
     display: flex;
