@@ -164,7 +164,7 @@ body {
 
 /* ...or add this class to an element */
 .hero {
-    height: 500px;
+    height: 650px;
     /* background-image:
         radial-gradient(rgb(234, 225, 225) 10%, transparent 10%);
     background-position: 8px 8px;
@@ -173,7 +173,7 @@ body {
     position: relative;
     background: #333333;
     color: white;
-    height: 100vh;
+    /* height: 100vh; */
     display: flex;
     align-items: center;
     overflow: hidden;
@@ -183,7 +183,7 @@ body {
 
 .waves {
     position: absolute;
-    bottom: 0;
+    bottom: 0rem;
     left: 0;
     right: 0;
     height: 200px;
@@ -249,7 +249,7 @@ body {
     max-width: 100%;
     position: relative;
     z-index: 1000;
-    margin-top: -8.5rem;
+    margin-top: -12.5rem;
 }
 
 .hero-text {
