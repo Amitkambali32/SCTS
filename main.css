@@ -685,6 +685,7 @@ body {
 
 }
 
+
 .about-us-div .about-us-title {
     transform: skew(30deg);
 }
@@ -738,6 +739,10 @@ body {
 .about-us .info .text .name,
 .about-us .info .text .position {
     font-weight: bold;
+}
+.our-story{
+    font-size: 1.2rem !important;
+    font-weight: bold !important;
 }
 
 .contact-title {
