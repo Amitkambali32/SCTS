@@ -254,12 +254,12 @@ body {
     color: #010101;
     font-family: 'Oswald', sans-serif;
     font-size: 1.2rem;
-    margin-top: 4rem;
+    margin-top: 5rem;
     padding: 0 16px;
     text-align: center;
 }
 
-/* @keyframes waves {
+@keyframes waves {
     0% {
         transform: translate(-50%, -75%) rotate(0deg);
     }
@@ -267,7 +267,7 @@ body {
     100% {
         transform: translate(-50%, -75%) rotate(360deg);
     }
-} */
+}
 
 
 .hero-img {
